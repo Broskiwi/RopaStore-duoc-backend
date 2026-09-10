@@ -3,10 +3,12 @@ package com.duoc.RopaStore.service;
 import com.duoc.RopaStore.model.Product;
 import com.duoc.RopaStore.model.ProductDTO;
 import com.duoc.RopaStore.repository.ProductRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class ProductService {
     private final ProductRepository productRepository;
     public ProductService(ProductRepository productRepository) {
