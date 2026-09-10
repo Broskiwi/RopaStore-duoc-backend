@@ -1,35 +1,17 @@
 package com.duoc.RopaStore.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-
-@Entity
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+public class ProductDTO {
     private String name;
-    // TODO: Migrate to an enum
     private String type;
     private double price;
 
-    public Product() {
-    }
-    public Product(String name, String type, double price) {
+    public ProductDTO(String name, String type, double price) {
         this.name = name;
         this.type = type;
         this.price = price;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public ProductDTO() {
     }
 
     public String getName() {
@@ -54,5 +36,14 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "name: '" + name + '\'' +
+                ", type: '" + type + '\'' +
+                ", price: " + price +
+                '}';
     }
 }
