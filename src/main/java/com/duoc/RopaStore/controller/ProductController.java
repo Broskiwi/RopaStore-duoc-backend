@@ -21,7 +21,7 @@ public class ProductController {
 
     @GetMapping
     public List<ProductDTO> getAllProductsSorted() {
-        return productService.findAllByOrderByPriceAscending();
+        return productService.getSortedByPriceAscending();
     }
 
 }
