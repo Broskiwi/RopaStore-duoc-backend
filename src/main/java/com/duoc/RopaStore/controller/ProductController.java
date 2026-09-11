@@ -10,7 +10,7 @@ import com.duoc.RopaStore.model.ProductDTO;
 import com.duoc.RopaStore.service.ProductService;
 
 @RestController
-@RequestMapping ("/api/products")
+@RequestMapping("/api/products")
 public class ProductController {
 
     private final ProductService productService;
@@ -20,8 +20,8 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<ProductDTO> getAllProducts() {
-        return productService.findAll();
+    public List<ProductDTO> getAllProductsSorted() {
+        return productService.findAllByOrderByPriceAscending();
     }
 
 }
